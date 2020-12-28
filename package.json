@@ -1,0 +1,19 @@
+{
+  "name": "studentList",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "art-template": "^4.13.2",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^3.3.5",
+    "express": "^4.17.1",
+    "express-art-template": "^1.0.1"
+  }
+}

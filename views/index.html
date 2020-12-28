@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        /* 设置表格居中 */
+        th,
+        td {
+            /* 设置水平方向居中 */
+            text-align: center;
+            /* 设置竖直方向居中 */
+            vertical-align: middle;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- 使用bootstrap设置首页的样式 -->
+    <div class="container">
+        <!-- 标题部分 -->
+        <h1>学生列表 <small>90营</small></h1>
+        <!-- 新增一个添加学生的按钮 -->
+        <a class="btn btn-success" href="/students/new">添加学生</a>
+        <!-- 表格部分 -->
+        <table class="table">
+            <tr>
+                <th>#</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>年龄</th>
+                <th>爱好</th>
+                <th>操作</th>
+            </tr>
+            {{each students}}
+            <tr>
+                <td>{{$value.id}}</td>
+                <td>{{$value.name}}</td>
+                <!-- 三元表达式通过gender的值来判断性别 -->
+                <td>{{$value.gender=='0'?'男':'女'}}</td>
+                <td>{{$value.age}}</td>
+                <td>{{$value.hobbies}}</td>
+                <td>
+                    <!-- 添加按钮，点击跳转到edit和delete页面，并将id值带过去 -->
+                    <!-- <a class="btn btn-default" href=/students/edit>编辑</a>
+                    <a class="btn btn-default" href=/students/delete>删除</a> -->
+                    <a class="btn btn-default" href="/students/edit/{{$value.id}}">编辑</a>
+                    <a class="btn btn-default" href="/students/delete/{{$value.id}}">删除</a>
+                </td>
+            </tr>
+            {{/each}}
+    </div>
+
+
+</body>
+
+</html>
